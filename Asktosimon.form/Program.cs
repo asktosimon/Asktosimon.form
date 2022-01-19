@@ -61,14 +61,16 @@ PrintPerson(person);
 
 string[] GetNames(int count)
 {
-    var i = count;
-    var result = new string[i];
+    var i = count - 1;
+    var result = new string[count];
 
-    while (count < 0)
+    while (i >= 0)
     {
         GetField("What`s its name?", out string name);
-        result.Append(name);
+        result[i] = name;
+        i--;
     }
+    
 
     return result;
 }
